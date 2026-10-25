@@ -15,7 +15,37 @@ import streamlit as st
 API = os.getenv("API_BASE_URL", "http://localhost:8000").rstrip("/")
 TIMEOUT = float(os.getenv("UI_REQUEST_TIMEOUT", "180"))
 
-st.set_page_config(page_title="BookWise", page_icon="📖", layout="centered")
+import base64
+
+st.set_page_config(page_title="Get enlightenment from osho🙌🏼✨", layout="centered")
+
+# --------------------------------------------------------- background image
+_DIR = os.path.dirname(__file__)
+
+def _b64(path: str) -> str:
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+def set_bg_image(image_path: str) -> None:
+    ext = os.path.splitext(image_path)[1].lower()
+    mime = {"jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png",
+            "webp": "image/webp", "gif": "image/gif"}.get(ext.lstrip("."), "image/jpeg")
+    data = _b64(image_path)
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:{mime};base64,{data}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 
 # ----------------------------------------------------------------- API helpers
@@ -86,8 +116,22 @@ def render_response(resp: dict) -> None:
 
 # ------------------------------------------------------------------ auth views
 def auth_view() -> None:
+    # Login page background
+    _login_bg = os.path.join(_DIR, "background_login.webp")
+    if os.path.exists(_login_bg):
+        set_bg_image(_login_bg)
+
     info = book_info()
-    st.title("📖 BookWise")
+
+    # Centered logo instead of text title
+    _logo_path = os.path.join(_DIR, "logo.png")
+    if os.path.exists(_logo_path):
+        logo_data = _b64(_logo_path)
+        st.markdown(
+            f'<div style="text-align:center;"><img src="data:image/png;base64,{logo_data}" style="max-width:400px;width:100%;"></div>',
+            unsafe_allow_html=True,
+        )
+
     if info:
         st.subheader(info["title"])
     st.caption("Ask questions about this one book. Answers come only from the book and cite chapter and page.")
@@ -118,6 +162,11 @@ def auth_view() -> None:
 
 # ------------------------------------------------------------------- chat view
 def chat_view() -> None:
+    # Chat page background
+    _chat_bg = os.path.join(_DIR, "background.jpg")
+    if os.path.exists(_chat_bg):
+        set_bg_image(_chat_bg)
+
     info = book_info()
     with st.sidebar:
         st.write(f"Signed in as **{st.session_state.get('email', '')}**")
@@ -133,10 +182,16 @@ def chat_view() -> None:
             st.session_state.clear()
             st.rerun()
 
-    st.title("📖 BookWise")
+    st.title("Get enlightenment from osho🙌🏼✨")
     if info:
         st.subheader(info["title"])
-    st.caption("Each question is answered on its own; earlier messages are not used as evidence.")
+    st.markdown("""What if true happiness isn't about getting everything you want, but learning to appreciate what you already have? 🌷
+
+Joy: The Happiness That Comes from Within explores the deeper meaning of happiness, self-acceptance, gratitude, and finding peace within yourself. It reminds us that joy doesn't have to depend on perfect relationships, achievements, money, or external validation. Instead, it can grow from the little things — being present, embracing imperfections, letting go of comparisons, and appreciating life as it is.
+
+In a world that constantly tells us to do more, be more, and have more, this book invites you to slow down, reconnect with yourself, and discover the happiness that already exists within you.
+
+Because the real glow-up? It's finding peace within yourself. ✨""")
 
     for turn in st.session_state.get("history", []):
         with st.chat_message("user"):
