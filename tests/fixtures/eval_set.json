@@ -1,0 +1,18 @@
+[
+  {"id": "q01", "kind": "answerable", "question": "How many steps did Mirelle climb every evening to light the lamp?", "answerable": true,
+   "expected_passage_contains": "214 steps", "expected_pages": [3], "expected_chapter": "The Tide Tables", "key_facts": ["214"]},
+  {"id": "q02", "kind": "answerable", "question": "What fuel did the lamp burn until 1903?", "answerable": true,
+   "expected_passage_contains": "whale oil", "expected_pages": [3], "expected_chapter": "The Tide Tables", "key_facts": ["whale oil"]},
+  {"id": "q03", "kind": "answerable", "question": "What was the supply boat called?", "answerable": true,
+   "expected_passage_contains": "named the Curlew", "expected_pages": [3], "expected_chapter": "The Tide Tables", "key_facts": ["Curlew"]},
+  {"id": "q04", "kind": "answerable", "question": "When did the first great storm of Mirelle's career strike?", "answerable": true,
+   "expected_passage_contains": "9 November 1889", "expected_pages": [4], "expected_chapter": "Storm Signals", "key_facts": ["9 November 1889"]},
+  {"id": "q05", "kind": "answerable", "question": "Who was Mirelle's apprentice?", "answerable": true,
+   "expected_passage_contains": "Tobias Wren", "expected_pages": [5], "expected_chapter": "Storm Signals", "key_facts": ["Tobias Wren"]},
+  {"id": "q06", "kind": "answerable", "question": "What did the inspector award Mirelle in 1893?", "answerable": true,
+   "expected_passage_contains": "silver whistle", "expected_pages": [6], "expected_chapter": "The Quiet Season", "key_facts": ["silver whistle"]},
+  {"id": "q07", "kind": "unrelated", "question": "What is the capital of France?", "answerable": false},
+  {"id": "q08", "kind": "unrelated", "question": "How do I configure a Kubernetes cluster?", "answerable": false},
+  {"id": "q09", "kind": "plausible_absent", "question": "What was the name of Mirelle Odan's husband?", "answerable": false},
+  {"id": "q10", "kind": "plausible_absent", "question": "Which ship did the Curlew rescue in 1895?", "answerable": false}
+]

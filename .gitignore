@@ -1,0 +1,23 @@
+# secrets
+.env
+# private / copyrighted book and owner-reviewed config you may not want public
+data/books/*.pdf
+# runtime state
+runtime/*
+!runtime/.gitkeep
+chroma_db/*
+!chroma_db/.gitkeep
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hf_cache/
+# editors / OS
+.vscode/
+.idea/
+.DS_Store

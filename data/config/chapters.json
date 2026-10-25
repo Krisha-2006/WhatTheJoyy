@@ -1,0 +1,401 @@
+{
+  "version": 1,
+  "reviewed": true,
+  "source": "outline",
+  "chapter_level": 0,
+  "notes": [
+    "Generated from the PDF bookmarks. Review titles, levels and 'indexed' flags, then set \"reviewed\": true. Entries at level <= chapter_level are chapters; deeper entries are sections."
+  ],
+  "entries": [
+    {
+      "id": "e001",
+      "title": "Title Page",
+      "start_page": 2,
+      "level": 0,
+      "anchor": "Title Page",
+      "anchor_offset": null,
+      "indexed": false,
+      "note": "Auto-excluded front/back matter"
+    },
+    {
+      "id": "e002",
+      "title": "Table of Contents",
+      "start_page": 3,
+      "level": 0,
+      "anchor": "Table of Contents",
+      "anchor_offset": null,
+      "indexed": false,
+      "note": "Auto-excluded front/back matter"
+    },
+    {
+      "id": "e003",
+      "title": "Foreword",
+      "start_page": 5,
+      "level": 0,
+      "anchor": "Foreword",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e004",
+      "title": "WHAT IS HAPPINESS?",
+      "start_page": 13,
+      "level": 0,
+      "anchor": "WHAT IS HAPPINESS?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e005",
+      "title": "IT DEPENDS ON YOU",
+      "start_page": 14,
+      "level": 1,
+      "anchor": "IT DEPENDS ON YOU",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e006",
+      "title": "FROM THE SURFACE TO THE CENTER",
+      "start_page": 18,
+      "level": 1,
+      "anchor": "FROM THE SURFACE TO THE CENTER",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e007",
+      "title": "EMPTY HANDS",
+      "start_page": 26,
+      "level": 1,
+      "anchor": "EMPTY HANDS",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e008",
+      "title": "IN PURSUIT",
+      "start_page": 30,
+      "level": 0,
+      "anchor": "IN PURSUIT",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e009",
+      "title": "THE FUNDAMENTAL DUALITY",
+      "start_page": 31,
+      "level": 1,
+      "anchor": "THE FUNDAMENTAL DUALITY",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e010",
+      "title": "NOT CHARACTER BUT CONSCIOUSNESS",
+      "start_page": 36,
+      "level": 1,
+      "anchor": "NOT CHARACTER BUT CONSCIOUSNESS",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e011",
+      "title": "CHASING RAINBOWS",
+      "start_page": 39,
+      "level": 1,
+      "anchor": "CHASING RAINBOWS",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e012",
+      "title": "THE ROOTS OF MISERY",
+      "start_page": 47,
+      "level": 1,
+      "anchor": "THE ROOTS OF MISERY",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e013",
+      "title": "FROM AGONY TO ECSTASY",
+      "start_page": 52,
+      "level": 0,
+      "anchor": "FROM AGONY TO ECSTASY",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e014",
+      "title": "UNDERSTANDING IS THE KEY",
+      "start_page": 53,
+      "level": 1,
+      "anchor": "UNDERSTANDING IS THE KEY",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e015",
+      "title": "BREAD AND CIRCUSES",
+      "start_page": 55,
+      "level": 1,
+      "anchor": "BREAD AND CIRCUSES",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e016",
+      "title": "ECSTASY IS REBELLIOUS",
+      "start_page": 57,
+      "level": 1,
+      "anchor": "ECSTASY IS REBELLIOUS",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e017",
+      "title": "REAL OR SYMBOLIC?",
+      "start_page": 63,
+      "level": 1,
+      "anchor": "REAL OR SYMBOLIC?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e018",
+      "title": "BEING AND BECOMING",
+      "start_page": 66,
+      "level": 1,
+      "anchor": "BEING AND BECOMING",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e019",
+      "title": "UNDERSTANDING THE ROOTS OF MISERY - RESPONSES TO QUESTIONS",
+      "start_page": 72,
+      "level": 0,
+      "anchor": "UNDERSTANDING THE ROOTS OF MISERY - RESPONSES TO QUESTIONS",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e020",
+      "title": "Why don’t we drop our miseries, our ignorance and unhappiness? How can human beings be happy and blissful?",
+      "start_page": 73,
+      "level": 1,
+      "anchor": "Why don’t we drop our miseries, our ignorance and unhappiness? How can human beings be happy and blissful?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e021",
+      "title": "Why is it so difficult to forgive, to stop clinging to hurts long since past?",
+      "start_page": 80,
+      "level": 1,
+      "anchor": "Why is it so difficult to forgive, to stop clinging to hurts long since past?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e022",
+      "title": "Why do we make mountains out of molehills?",
+      "start_page": 85,
+      "level": 1,
+      "anchor": "Why do we make mountains out of molehills?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e023",
+      "title": "Why do I always feel so miserable? Can’t you take it all away?",
+      "start_page": 92,
+      "level": 1,
+      "anchor": "Why do I always feel so miserable? Can’t you take it all away?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e024",
+      "title": "Why does everyone want to pretend to be what they are not? What is the psychology behind it?",
+      "start_page": 97,
+      "level": 1,
+      "anchor": "Why does everyone want to pretend to be what they are not? What is the psychology behind it?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e025",
+      "title": "How can I be myself?",
+      "start_page": 99,
+      "level": 1,
+      "anchor": "How can I be myself?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e026",
+      "title": "Sometimes I feel, not like Sartre says, that “hell is other people,” but that “hell is myself.” I am in hell. Hell! Do I have to accept hell before I can find bliss? I don’t understand how.",
+      "start_page": 103,
+      "level": 1,
+      "anchor": "Sometimes I feel, not like Sartre says, that “hell is other people,” but that “hell is myself.” I am in hell. Hell! Do I have to accept hell before I can find bliss? I don’t understand how.",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e027",
+      "title": "Whenever in life I’ve had a bout of feeling miserable because of the end of a relationship, a point always comes when I just laugh at myself, feel freedom return, and see that all I had done was to stop loving myself. Is this at the root of most people’s suffering, or is it just my trip?",
+      "start_page": 108,
+      "level": 1,
+      "anchor": "Whenever in life I’ve had a bout of feeling miserable because of the end of a relationship, a point always comes when I just laugh at myself, feel freedom return, and see that all I had done was to stop loving myself. Is this at the root of most people’s suffering, or is it just my trip?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e028",
+      "title": "Why do I feel so much pain in letting go of the things that are causing me misery?",
+      "start_page": 113,
+      "level": 1,
+      "anchor": "Why do I feel so much pain in letting go of the things that are causing me misery?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e029",
+      "title": "Should one first come to terms with one’s own loneliness before entering into relationship?",
+      "start_page": 120,
+      "level": 1,
+      "anchor": "Should one first come to terms with one’s own loneliness before entering into relationship?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e030",
+      "title": "Is this really all there is? My life seems so meaningless and empty. I keep thinking there must be something more. I want there to be something more.",
+      "start_page": 124,
+      "level": 1,
+      "anchor": "Is this really all there is? My life seems so meaningless and empty. I keep thinking there must be something more. I want there to be something more.",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e031",
+      "title": "I feel caught. The frustration of boredom only increases when I think that anything I might do is a meaningless frenzy. What exactly is boredom?",
+      "start_page": 127,
+      "level": 1,
+      "anchor": "I feel caught. The frustration of boredom only increases when I think that anything I might do is a meaningless frenzy. What exactly is boredom?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e032",
+      "title": "Can you say something about the drug problem? What makes people get involved in using drugs?",
+      "start_page": 131,
+      "level": 1,
+      "anchor": "Can you say something about the drug problem? What makes people get involved in using drugs?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e033",
+      "title": "How can we be so concerned with our own happiness when there are so many problems that face humankind? Hunger, poverty, miserable living conditions, so little opportunity for most people to develop their abilities and talents …",
+      "start_page": 135,
+      "level": 1,
+      "anchor": "How can we be so concerned with our own happiness when there are so many problems that face humankind? Hunger, poverty, miserable living conditions, so little opportunity for most people to develop their abilities and talents …",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e034",
+      "title": "Why am I always daydreaming about the future?",
+      "start_page": 141,
+      "level": 1,
+      "anchor": "Why am I always daydreaming about the future?",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e035",
+      "title": "LIVE IN JOY",
+      "start_page": 150,
+      "level": 0,
+      "anchor": "LIVE IN JOY",
+      "anchor_offset": null,
+      "indexed": true,
+      "note": null
+    },
+    {
+      "id": "e036",
+      "title": "ALSO BY OSHO",
+      "start_page": 160,
+      "level": 0,
+      "anchor": "ALSO BY OSHO",
+      "anchor_offset": null,
+      "indexed": false,
+      "note": "Auto-excluded front/back matter"
+    },
+    {
+      "id": "e037",
+      "title": "About the Author",
+      "start_page": 162,
+      "level": 0,
+      "anchor": "About the Author",
+      "anchor_offset": null,
+      "indexed": false,
+      "note": "Auto-excluded front/back matter"
+    },
+    {
+      "id": "e038",
+      "title": "Osho® Meditation Resort",
+      "start_page": 163,
+      "level": 0,
+      "anchor": "Osho® Meditation Resort",
+      "anchor_offset": null,
+      "indexed": false,
+      "note": "Auto-excluded front/back matter"
+    },
+    {
+      "id": "e039",
+      "title": "Copyright Page",
+      "start_page": 167,
+      "level": 0,
+      "anchor": "Copyright Page",
+      "anchor_offset": null,
+      "indexed": false,
+      "note": "Auto-excluded front/back matter"
+    }
+  ]
+}

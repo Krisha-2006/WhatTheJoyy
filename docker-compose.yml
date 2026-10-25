@@ -1,0 +1,46 @@
+# BookWise self-hosting: Ollama + API + UI with persistent volumes.
+# Ports are bound to 127.0.0.1; put a TLS reverse proxy (Caddy/nginx) in front
+# for any public deployment (see docs/DEPLOYMENT_GUIDE.md).
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    # GPU (optional, NVIDIA): uncomment and install the NVIDIA container toolkit
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices: [{driver: nvidia, count: all, capabilities: [gpu]}]
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    env_file: .env
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+    volumes:
+      - ./data:/app/data            # book PDF + chapters.json (owner-managed)
+      - chroma_db:/app/chroma_db    # vector index
+      - runtime:/app/runtime        # accounts DB, active index pointer, reports
+      - hf_cache:/home/bookwise/.cache/huggingface   # embedding model cache
+    depends_on: [ollama]
+    ports: ["127.0.0.1:8000:8000"]
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    environment:
+      API_BASE_URL: http://api:8000
+    depends_on: [api]
+    ports: ["127.0.0.1:8501:8501"]
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
+  chroma_db:
+  runtime:
+  hf_cache:
