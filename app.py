@@ -116,48 +116,161 @@ def render_response(resp: dict) -> None:
 
 # ------------------------------------------------------------------ auth views
 def auth_view() -> None:
-    # Login page background
+    # Background image (the blue bird/leaf design)
     _login_bg = os.path.join(_DIR, "background_login.webp")
     if os.path.exists(_login_bg):
         set_bg_image(_login_bg)
 
     info = book_info()
 
-    # Centered logo instead of text title
+    # ---- CSS ----
+    st.markdown("""
+    <style>
+    /* =================== HIDE STREAMLIT CHROME =================== */
+    header, [data-testid="stHeader"] { background: transparent !important; }
+    [data-testid="stToolbar"]       { display: none !important; }
+    footer                          { display: none !important; }
+    .stAppDeployButton              { display: none !important; }
+    [data-testid="stBottom"]        { display: none !important; }
+
+    /* =================== MAIN AREA — transparent =================== */
+    [data-testid="stMainBlockContainer"] {
+        max-width: 540px !important;
+        background: transparent !important;
+    }
+
+    /* =================== WHITE CARD = bordered container =================== */
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background: #ffffff !important;
+        border: none !important;
+        border-radius: 16px !important;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.13) !important;
+        padding: 28px 28px 32px 28px !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] > div {
+        background: transparent !important;
+    }
+
+    /* =================== HEADING =================== */
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stSubheader"] p {
+        color: #1a1a2e !important;
+        font-weight: 700 !important;
+        font-family: 'Source Sans Pro', sans-serif !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stCaptionContainer"] {
+        color: #555 !important;
+    }
+
+    /* =================== TABS =================== */
+    [data-testid="stTabs"] [data-baseweb="tab-list"] {
+        gap: 0 !important;
+        border-bottom: 2px solid #eaeaea !important;
+        background: transparent !important;
+    }
+    [data-testid="stTabs"] [data-baseweb="tab"] {
+        padding: 10px 24px !important;
+        font-weight: 500 !important;
+        font-size: 0.95rem !important;
+        color: #777 !important;
+        background: transparent !important;
+    }
+    [data-testid="stTabs"] [aria-selected="true"] {
+        color: #c0392b !important;
+        font-weight: 600 !important;
+    }
+    [data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+        background-color: #c0392b !important;
+    }
+
+    /* =================== FORM CONTAINER =================== */
+    [data-testid="stForm"] {
+        background: #ffffff !important;
+        border: 1px solid #e8e8e8 !important;
+        border-radius: 12px !important;
+        padding: 28px 24px 24px 24px !important;
+        box-shadow: none !important;
+    }
+
+    /* =================== INPUT FIELDS =================== */
+    [data-testid="stForm"] [data-testid="stTextInput"] label {
+        font-size: 0.88rem !important;
+        font-weight: 500 !important;
+        color: #444 !important;
+    }
+    [data-testid="stForm"] input {
+        background: #f5f6f8 !important;
+        border: 1px solid #ddd !important;
+        border-radius: 8px !important;
+        padding: 12px 16px !important;
+        font-size: 0.95rem !important;
+        height: auto !important;
+    }
+    [data-testid="stForm"] input:focus {
+        border-color: #08ADE4 !important;
+        box-shadow: 0 0 0 3px rgba(8,173,228,0.15) !important;
+        background: #fff !important;
+    }
+
+    /* =================== SUBMIT BUTTON =================== */
+    [data-testid="stForm"] button[kind="secondaryFormSubmit"],
+    [data-testid="stForm"] button[type="submit"] {
+        background: #08ADE4 !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 10px 32px !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        cursor: pointer !important;
+        transition: background 0.2s ease !important;
+    }
+    [data-testid="stForm"] button[kind="secondaryFormSubmit"]:hover,
+    [data-testid="stForm"] button[type="submit"]:hover {
+        background: #069ad0 !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # ---- Logo — sits on the blue background, ABOVE the white card ----
     _logo_path = os.path.join(_DIR, "logo.png")
     if os.path.exists(_logo_path):
         logo_data = _b64(_logo_path)
         st.markdown(
-            f'<div style="text-align:center;"><img src="data:image/png;base64,{logo_data}" style="max-width:400px;width:100%;"></div>',
+            f'<div style="text-align:center;padding:20px 0 24px 0;">'
+            f'<img src="data:image/png;base64,{logo_data}" style="max-width:340px;width:80%;">'
+            f'</div>',
             unsafe_allow_html=True,
         )
 
-    if info:
-        st.subheader(info["title"])
-    st.caption("Ask questions about this one book. Answers come only from the book and cite chapter and page.")
-    tab_login, tab_signup = st.tabs(["Log in", "Sign up"])
-    with tab_login:
-        with st.form("login"):
-            email = st.text_input("Email")
-            password = st.text_input("Password", type="password")
-            if st.form_submit_button("Log in"):
-                try:
-                    data = api("POST", "/auth/login", json={"email": email, "password": password})
-                    st.session_state.update(token=data["accessToken"], email=email, history=[])
-                    st.rerun()
-                except ApiError as e:
-                    st.error(e.message)
-    with tab_signup:
-        with st.form("signup"):
-            email = st.text_input("Email", key="su_email")
-            password = st.text_input("Password (10+ characters)", type="password", key="su_pw")
-            invite = st.text_input("Invite code (if required)", key="su_invite")
-            if st.form_submit_button("Create account"):
-                try:
-                    api("POST", "/auth/signup", json={"email": email, "password": password, "inviteCode": invite or None})
-                    st.success("Account created. Switch to the Log in tab.")
-                except ApiError as e:
-                    st.error(e.message)
+    # ---- White card: heading → form (inside a bordered container) ----
+    with st.container(border=True):
+        if info:
+            st.subheader(info["title"])
+        st.caption("Ask questions about this one book. Answers come only from the book and cite chapter and page.")
+
+        tab_login, tab_signup = st.tabs(["Log in", "Sign up"])
+        with tab_login:
+            with st.form("login"):
+                email = st.text_input("Email")
+                password = st.text_input("Password", type="password")
+                if st.form_submit_button("Log in"):
+                    try:
+                        data = api("POST", "/auth/login", json={"email": email, "password": password})
+                        st.session_state.update(token=data["accessToken"], email=email, history=[])
+                        st.rerun()
+                    except ApiError as e:
+                        st.error(e.message)
+        with tab_signup:
+            with st.form("signup"):
+                email = st.text_input("Email", key="su_email")
+                password = st.text_input("Password (10+ characters)", type="password", key="su_pw")
+                invite = st.text_input("Invite code (if required)", key="su_invite")
+                if st.form_submit_button("Create account"):
+                    try:
+                        api("POST", "/auth/signup", json={"email": email, "password": password, "inviteCode": invite or None})
+                        st.success("Account created. Switch to the Log in tab.")
+                    except ApiError as e:
+                        st.error(e.message)
 
 
 # ------------------------------------------------------------------- chat view
@@ -166,6 +279,53 @@ def chat_view() -> None:
     _chat_bg = os.path.join(_DIR, "background.jpg")
     if os.path.exists(_chat_bg):
         set_bg_image(_chat_bg)
+
+    # Hide white header bar & footer so background shows through
+    st.markdown("""
+    <style>
+    /* transparent header */
+    header, [data-testid="stHeader"] {
+        background: transparent !important;
+    }
+    [data-testid="stToolbar"] { display: none !important; }
+    .stAppDeployButton { display: none !important; }
+    /* transparent footer / bottom bar */
+    footer { display: none !important; }
+    [data-testid="stBottom"] {
+        background: transparent !important;
+    }
+    [data-testid="stBottom"] > div {
+        background: transparent !important;
+    }
+    /* make the chat input area background transparent */
+    .stChatInput, [data-testid="stChatInput"] {
+        background: transparent !important;
+    }
+    .stChatInput > div, [data-testid="stChatInput"] > div {
+        background: rgba(255,255,255,0.85) !important;
+        border-radius: 25px !important;
+    }
+    /* ---- sidebar toggle button: always visible ---- */
+    [data-testid="stSidebarCollapsedControl"] {
+        display: flex !important;
+        visibility: visible !important;
+        z-index: 999 !important;
+    }
+    [data-testid="stSidebarCollapsedControl"] button {
+        background: rgba(255,255,255,0.85) !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+    }
+    [data-testid="stSidebar"] {
+        z-index: 999 !important;
+    }
+    /* ---- keep title (with ✨) on one line ---- */
+    [data-testid="stMainBlockContainer"] h1 {
+        white-space: nowrap !important;
+        overflow: visible !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
     info = book_info()
     with st.sidebar:
